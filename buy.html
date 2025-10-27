@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <title>DONUT PLANET</title>
+
+    <link rel="icon" href="https://8.school.zt.ua/wp-content/themes/shkolazt/img/official/prapor-Ukrayini.png"
+        type="image/png">
+    <link rel="stylesheet" href="style.css" media="all">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Boldonse&family=Bytesized&family=Dosis:wght@200..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Marcellus&family=Tektur:wght@400..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="m-0 p-0 bg-white d-flex flex-column justify-content-center align-items-center">
+
+    <header style="z-index: 1;"
+        class="m-0 p-4 pt-2 pb-2 container-fluid position-fixed top-0 start-0 row justify-content-between border-0 bg-warning border-bottom border-white border-3">
+
+        <div class="m-0 p-0 col-auto row ">
+            <i class="dp_icon pe-2 col-auto fa-solid fa-moon text-white"></i>
+            <a href="/" class="dp_title col-auto text-white">DONUT PLANET</Ф>
+        </div>
+
+        <div class="m-0 p-0 col-auto row d-none d-lg-block">
+            <div style="font-size: 18px;" class="dp_title col-auto">🎁 Bestelle vor 15 Uhr für Lieferung am nächsten
+                Tag!</div>
+        </div>
+
+        <a href="/buy.html" style="text-decoration: none;" class="m-0 p-0 col-auto row align-items-center ">
+            <i class="dp_icon pe-2 col-auto fa-solid fa-basket-shopping position-relative ">
+                <div id="totalAmount" style="font-size: 11px; width: 21px; height:21px; top: 28px; left: 28px"
+                    class="m-0 p-0 text-center rounded-circle position-absolute bg-primary p-1">0</div>
+            </i>
+
+            <div class="dp_title col-auto d-none d-sm-block">Warenkorb</div>
+            <!-- <div id="totalPay">€0.00</div> -->
+            <!-- <div id="totalAmount" class="m-0 p-0 position absolute">0</div> -->
+
+        </a>
+
+    </header>
+
+    <header
+        class="m-0 p-4 pt-2 pb-2 container-fluid position-f5ixed top-0 start-0 row justify-content-between border-0 bg-warning ">
+
+        <div class="m-0 p-0 col-auto row  ">
+            <i class="dp_icon pe-2 col-auto fa-solid fa-moon text-white"></i>
+            <div class="dp_title col-auto text-white">DONUT PLANET</div>
+        </div>
+
+        <div class="m-0 p-0 col-auto row d-none d-lg-block">
+            <div style="font-size: 18px;" class="dp_title col-auto">🎁 Bestelle vor 15 Uhr für Lieferung am nächsten
+                Tag!</div>
+        </div>
+
+        <div class="m-0 p-0 col-auto row">
+            <i class="dp_icon pe-2 col-auto fa-solid fa-basket-shopping"></i>
+            <div class="dp_title col-auto d-none d-sm-block">Warenkorb</div>
+        </div>
+    </header>
+
+    <section class="m-0 p-4 container-xxl row justify-content-center">
+
+        <div id="usersContainer" class="m-0 p-2 col-12 col-md-7 col-xl-6 row d-flex flex-column ">
+
+
+
+        </div>
+
+        <div class="m-0 p-2 col-12 col-sm-8 col-md-5 col-xl-4 row">
+            <div style="background-color: #f5f3f3;"
+                class="m-0 p-2 col-12 row d-flex flex-column align-items-center rounded-3">
+                <div class="m-0 p-2 pt-2 pb-2 col-12 text-center fw-bold fs-3">Zahlung</div>
+                <!-- <div class="m-0 p-2 pb-3 col-12 text-center fs-6">Bitte wählen Sie Ihr gewünschtes Lieferdatum aus –
+                    alle Pakete werden per DHL Express verschickt. Versandkosten: UK £7.95 | DE €7.95 | EU €9.95
+                </div>
+
+                <input class="m-0 p-2 ps-2 col-auto" type="date" id="start" name="trip-start" value="2018-07-22"
+                    min="2018-01-01" max="2018-12-31" /> -->
+
+                <div class="m-0 p-0 mt-2 mb-2 border-top"></div>
+                <div class="m-0 p-0 pt-2 pb-2 col-12 row">
+                    <div class="m-0 p-2 pt-2  col fw-bold fs-4"> Zwischensumme: </div>
+                    <div id="totalPay1" class="m-0 p-2 pt-2  col-auto fw-bold fs-4">€0.00</div>
+                </div>
+
+                <div class="m-0 p-0 pt-2 pb-2 col-12 row">
+                    <div class="m-0 p-2 pt-2  col fw-bold fs-4"> Liferung: </div>
+                    <div class="m-0 p-2 pt-2  col-auto fw-bold fs-4"> €0,00</div>
+                </div>
+
+                <div class="dp_add p-2 row col-12">
+                    <a href="/zahlung.html" id="checkoutBtn" class="dp_add_inside col-12 bottom_2">ZUM CHECKOUT</a>
+                </div>
+
+                <div class="dp_add p-2 row col-12">
+                    <a href="/" class="dp_add_inside col-12 bottom_2">WEITER EINKAUFEN</a>
+                </div>
+
+                <div class="m-0 p-2 col-12 text-center fs-6">Preise inklusive MwSt. - Gutscheincodes und
+                    Versandkosten werden beim Checkout hinzugefügt.
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="m-0 p-3 container-xxl row ">
+
+        <div class="m-0 p-2  fw-bold fs-1 text-uppercase">Geschenkbox aus 6 donuts</div>
+        <div class="m-0 p-2 pb-4 fs-5">8 Products</div>
+
+        <a href="/card_1.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/1a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Naschkatze Box"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€45.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/1a.webp', 'Naschkatze Box', '1', '45.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+
+        <a href="/card_2.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/2a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Süßigkeiten Parade"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€45.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/2a.webp', 'Süßigkeiten Parade', '1', '45.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+
+        <a href="/card_3.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/3a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Donut Fiesta"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€45.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/3a.webp', 'Donut Fiesta', '1', '45.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+
+        <a href="/card_4.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/4a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Schokoladenzauber"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€45.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/4a.webp', 'Schokoladenzauber', '1', '45.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+
+        <a href="/card_5.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/5a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Bunte Bissen"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€45.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/5a.webp', 'Bunte Bissen', '1', '45.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+        <a href="/card_6.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/6a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Glücksmomente Box"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€45.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/6a.webp', 'Glücksmomente Box', '1', '45.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+
+        <a href="/card_7.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/7a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Süßer Gruß"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€45.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/7a.webp', 'Süßer Gruß', '1', '45.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+
+        <a href="/card_8.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/8a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Donut Himmel"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€45.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/8a.webp', 'Donut Himmel', '1', '45.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+
+    </section>
+
+    <section class="m-0 p-3 container-xxl row ">
+
+        <div class="m-0 p-2  fw-bold fs-1 text-uppercase">Geschenkbox aus 12 donuts</div>
+        <div class="m-0 p-2 pb-4 fs-5">8 Products</div>
+
+        <a href="/card_01.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/01a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Mini Happen Glück"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€49.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/01a.webp', 'Mini Happen Glück', '1', '49.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+
+        <a href="/card_02.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/02a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Schlemmerbox Deluxe"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€49.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/02a.webp', 'Schlemmerbox Deluxe', '1', '49.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+
+        <a href="/card_03.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/03a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Kunterbunte Freude"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€49.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/03a.webp', 'Kunterbunte Freude', '1', '49.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+
+        <a href="/card_04.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/04a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Knusperwunder"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€49.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/04a.webp', 'Knusperwunder', '1', '49.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+
+        <a href="/card_05.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/05a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Süße Versuchung"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€49.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/05a.webp', 'Süße Versuchung', '1', '49.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+        <a href="/card_06.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/06a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Zuckertraum Box"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€49.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/06a.webp', 'Zuckertraum Box', '1', '49.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+
+        <a href="/card_07.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/07a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Himmel auf Erden"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€49.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/07a.webp', 'Himmel auf Erden', '1', '49.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+
+        <a href="/card_08.html" style="text-decoration: none;" class="m-0 p-2 col-6 col-md-4 col-xl-3 row product-card ">
+            <img class="m-0 p-0 col-12 rounded-top-3" src="/image/08a.webp">
+            <div class="m-0 p-3 col bg-gray fs-5 fst-italic fw-bold">"Donut Glück"</div>
+            <div class="m-0 p-3 col-auto bg-gray text-end fw-bold fs-5">€49.75</div>
+            <div class="m-0 p-2 pt-0 col-12 bg-gray rounded-bottom-3">
+                <div class="m-0 p-2 col-12 text-center rounded-3 bg-warning fw-bold fs-6 bottom_2"
+                    onclick="handleAddToCart(event, '/image/08a.webp', 'Donut Glück', '1', '49.75')">
+                    IN DEN CORB</div>
+            </div>
+        </a>
+
+
+    </section>
+
+    <footer class="bg-dark text-white pt-5 pb-4 col-12">
+        <div class="container">
+            <div class="row">
+    
+                <!-- Donut Planet Links -->
+                <div class="col-12 col-md-3 mb-4">
+                    <h5 class="fw-bold mb-3">Donut Planet</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Online Bestellen</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Für Unternehmen</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Standorte</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Unsere Donuts</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Our Story</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Karriere</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Newsletter</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Support Links -->
+                <div class="col-12 col-md-3 mb-4">
+                    <h5 class="fw-bold mb-3">Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">FAQs</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Allergene</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Datenschutz</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">AGBs</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Impressum</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Kontakt</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Social Media -->
+                <div class="col-12 col-md-3 mb-4">
+                    <h5 class="fw-bold mb-3">Folge uns</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-4"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+    
+                <!-- Payments & Contact -->
+                <div class="col-12 col-md-3 mb-4">
+                    <h5 class="fw-bold mb-3">Wir akzeptieren</h5>
+                    <div class="mb-3">
+                        <i class="fab fa-cc-visa fs-3 me-2"></i>
+                        <i class="fab fa-cc-mastercard fs-3 me-2"></i>
+                        <i class="fab fa-cc-paypal fs-3 me-2"></i>
+                        <i class="fab fa-cc-amex fs-3"></i>
+                    </div>
+                    <h6 class="fw-bold">Kontakt</h6>
+                    <p class="mb-0">E-Mail: info@donutplanet.com</p>
+                    <p class="mb-0">Telefon: +43 357 768 398</p>
+                </div>
+    
+            </div>
+    
+            <hr class="bg-light">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="mb-0">&copy; 2025 Donut Planet. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script type="module" src="index.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getDatabase, ref, set, onValue, update, get } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+        // 🔧 Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSy...",
+            authDomain: "my-shop.firebaseapp.com",
+            databaseURL: "https://donut-planet-default-rtdb.europe-west1.firebasedatabase.app/",
+            projectId: "my-shop",
+            storageBucket: "my-shop.appspot.com",
+            messagingSenderId: "1234567890",
+            appId: "1:1234567890:web:abcd1234"
+        };
+
+        // 🚀 Ініціалізація
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        //////////////////////// Перша загрузка ////////////////////////
+
+        // 🔹 Отримуємо IP користувача
+        async function getUserIP() {
+            try {
+                const res = await fetch("https://api.ipify.org?format=json");
+                const data = await res.json();
+                return data.ip;
+            } catch (err) {
+                console.error("Не вдалося отримати IP:", err);
+                return "unknown";
+            }
+        }
+
+        // 🔹 Додаємо користувача лише один раз
+        async function addVisitor() {
+            const ip = await getUserIP();
+            if (ip === "unknown") return;
+
+            const visitorKey = ip.replace(/\./g, "_");
+            const visitorRef = ref(db, "visitors/" + visitorKey);
+
+            const snapshot = await get(visitorRef);
+            if (snapshot.exists()) return;
+
+            await set(visitorRef, {
+                ip: ip,
+                timestamp: new Date().toLocaleString("uk-UA"),
+                userAgent: navigator.userAgent,
+                page: window.location.pathname,
+                products: [],
+                pay: 0
+            });
+            console.log("✅ Відвідувач доданий:", ip);
+        }
+
+        window.addEventListener("load", addVisitor);
+
+        //////////////////////// Додавання продукту ////////////////////////
+
+        async function addUser(image, name, amount, price) {
+            const ip = await getUserIP();
+            if (ip === "unknown") return;
+
+            const visitorKey = ip.replace(/\./g, "_");
+            const visitorRef = ref(db, "visitors/" + visitorKey);
+
+            const snapshot = await get(visitorRef);
+            let visitorData = snapshot.exists() ? snapshot.val() : { products: [] };
+            if (!Array.isArray(visitorData.products)) visitorData.products = [];
+
+            const amountNum = parseInt(amount);
+            const priceNum = parseFloat(price);
+
+            const existingIndex = visitorData.products.findIndex(p => p.image === image);
+
+            if (existingIndex !== -1) {
+                visitorData.products[existingIndex].amount += amountNum;
+                visitorData.products[existingIndex].summary = visitorData.products[existingIndex].amount * priceNum;
+            } else {
+                visitorData.products.push({
+                    image,
+                    name,
+                    amount: amountNum,
+                    price: priceNum,
+                    summary: amountNum * priceNum
+                });
+            }
+
+            visitorData.pay = visitorData.products.reduce((sum, p) => sum + (p.summary || 0), 0);
+
+            await update(visitorRef, {
+                products: visitorData.products,
+                timestamp: new Date().toLocaleString("uk-UA"),
+                pay: visitorData.pay
+            });
+
+            console.log(`✅ Товар "${name}" додано/оновлено користувачу IP: ${ip}`);
+        }
+        window.addUser = addUser;
+
+        //////////////////////// Відображення користувача (тільки поточний IP) ////////////////////////
+
+        const container = document.getElementById("usersContainer");
+        const totalPayElement0 = document.getElementById("totalPay");
+        const totalPayElement1 = document.getElementById("totalPay1");
+
+        (async () => {
+            const ip = await getUserIP();
+            if (ip === "unknown") {
+                container.innerHTML = "<p>Не вдалося визначити IP</p>";
+                return;
+            }
+
+            const visitorKey = ip.replace(/\./g, "_");
+            const userRef = ref(db, "visitors/" + visitorKey);
+
+            onValue(userRef, (snapshot) => {
+                container.innerHTML = "";
+                let totalPayUser = 0;
+
+                if (!snapshot.exists()) {
+                    container.innerHTML = "<p>Немає товарів у кошику</p>";
+                    totalPayElement.textContent = "€0.00";
+                    totalPayElement1.textContent = "€0.00";
+                    return;
+                }
+
+                const user = snapshot.val();
+
+                if (Array.isArray(user.products) && user.products.length > 0) {
+                    user.products.forEach((product, index) => {
+                        const productDiv = document.createElement("div");
+                        productDiv.style.margin = "0px";
+                        productDiv.style.padding = "0px";
+
+                        productDiv.innerHTML = `
+                    <div style="background-color: #f5f3f3;" class="m-0 p-0 mb-3 col-12 row rounded-3">
+                        <img style="max-width: 130px ; max-height: 130px" class="dp_image col-4 col-sm-3 col-mdd-2 rounded-3" src="${product.image || "-"}">
+                        <div class="m-0 p-0 col">
+                            <div class="m-0 p-3 col fs-5 fw-bold">${product.name || "-"}</div>
+                            <div class="m-0 p-3 col-auto">
+                                <div class="m-0 p-0 row">
+                                    <button class="m-0 p-2 pe-0 ps-0 pt-0 pb-0 col-auto text-black fw-bold button"
+                                        style="width: 20px; height: 35px;"
+                                        onclick="MinusAmount('${visitorKey}', ${index})">-</button>
+                                    <input type="number"
+                                        value="${product.amount || 1}"
+                                        min="1"
+                                        max="99"
+                                        style="width: 40px; height: 35px; padding: 0; padding-left: 0px;"
+                                        disabled
+                                        class="m-0 col-auto text-center border-0 ">
+                                    <button class="m-0 p-2 ps-0 pe-0 pt-0 pb-0 col-auto text-black fw-bold button"
+                                        style="width: 20px; height: 35px;"
+                                        onclick="PlusAmount('${visitorKey}', ${index})">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-0 p-0 col-auto row d-flex flex-column">
+                            <div class="m-0 p-3 col-auto row justify-content-end">
+                                <i class="m-0 p-0 fs-5 col-auto fa-solid fa-xmark text-end button_cancel"
+                                    onclick="deleteProduct('${visitorKey}', ${index})"></i>
+                            </div>
+                            <div class="m-0 p-3 mt-auto col-auto fs-5 fw-bold d-flex align-items-end">
+                                €${((Number(product.amount) || 1) * (Number(product.price) || 0)).toFixed(2)}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                        container.appendChild(productDiv);
+                    });
+                } else {
+                    container.innerHTML = `
+                    <div class="alert alert-info d-flex flex-column align-items-center justify-content-center text-center py-5 rounded-3" style="font-size: 1.25rem;">
+                        <i class="fas fa-shopping-cart fa-3x mb-3"></i>
+                        <strong>Der Warenkorb ist leer.</strong>
+                        <p class="mt-2 mb-0">Fügen Sie Produkte hinzu, um Ihren Einkauf zu starten!</p>
+                    </div>
+                `;                }
+
+                // 💰 Підрахунок totalPay тільки цього користувача
+                totalPayUser = Number(user.pay || 0);
+
+                if (totalPayElement0)
+                    totalPayElement0.textContent = `€${totalPayUser.toFixed(2)}`;
+
+                if (totalPayElement1)
+                    totalPayElement1.textContent = `€${totalPayUser.toFixed(2)}`;
+
+            });
+        })();
+
+        //////////////////////// Видалення продукту ////////////////////////
+
+        window.deleteProduct = async function (userKey, productIndex) {
+            const userRef = ref(db, "visitors/" + userKey);
+            const snapshot = await get(userRef);
+            if (!snapshot.exists()) return;
+
+            const userData = snapshot.val();
+            if (!Array.isArray(userData.products)) return;
+
+            userData.products.splice(productIndex, 1);
+            userData.pay = userData.products.reduce((sum, p) => sum + (p.summary || 0), 0);
+
+            await update(userRef, { products: userData.products, pay: userData.pay });
+        };
+
+        //////////////////////// PLUS / MINUS AMOUNT ////////////////////////
+
+        window.PlusAmount = async function (userKey, productIndex) {
+            const userRef = ref(db, "visitors/" + userKey);
+            const snapshot = await get(userRef);
+            if (!snapshot.exists()) return;
+
+            const userData = snapshot.val();
+            if (!Array.isArray(userData.products) || !userData.products[productIndex]) return;
+
+            const product = userData.products[productIndex];
+            product.amount = (Number(product.amount) || 0) + 1;
+            product.summary = product.amount * Number(product.price || 0);
+
+            userData.pay = userData.products.reduce((sum, p) => sum + (p.summary || 0), 0);
+
+            await update(userRef, { products: userData.products, pay: userData.pay });
+        };
+
+        window.MinusAmount = async function (userKey, productIndex) {
+            const userRef = ref(db, "visitors/" + userKey);
+            const snapshot = await get(userRef);
+            if (!snapshot.exists()) return;
+
+            const userData = snapshot.val();
+            if (!Array.isArray(userData.products) || !userData.products[productIndex]) return;
+
+            const product = userData.products[productIndex];
+            product.amount = Math.max((Number(product.amount) || 1) - 1, 1);
+            product.summary = product.amount * Number(product.price || 0);
+
+            userData.pay = userData.products.reduce((sum, p) => sum + (p.summary || 0), 0);
+
+            await update(userRef, { products: userData.products, pay: userData.pay });
+        };
+
+        // ========================= Обробка кліку "IN DEN CORB" =========================
+        function handleAddToCart(event, image, name, amount, price) {
+            event.preventDefault();
+            addUserReplace(image, name, amount, price);
+        }
+        window.handleAddToCart = handleAddToCart;
+
+        // ========================= Додавання/оновлення товару =========================
+        async function addUserReplace(image, name, amount, price) {
+            const ip = await getUserIP();
+            if (ip === "unknown") return;
+
+            const visitorKey = ip.replace(/\./g, "_");
+            const visitorRef = ref(db, "visitors/" + visitorKey);
+
+            const snapshot = await get(visitorRef);
+            let visitorData = snapshot.exists() ? snapshot.val() : { products: [] };
+
+            if (!Array.isArray(visitorData.products)) visitorData.products = [];
+
+            const amountNum = parseInt(amount);
+            const priceNum = parseFloat(price);
+
+            const existingIndex = visitorData.products.findIndex(p => p.image === image);
+            if (existingIndex !== -1) {
+                // 🔄 якщо товар уже є — додаємо кількість
+                const oldAmount = parseInt(visitorData.products[existingIndex].amount || 0);
+                const newAmount = oldAmount + amountNum;
+                visitorData.products[existingIndex].amount = newAmount;
+                visitorData.products[existingIndex].summary = newAmount * priceNum;
+            } else {
+                // ➕ новий товар
+                visitorData.products.push({
+                    image,
+                    name,
+                    amount: amountNum,
+                    price: priceNum,
+                    summary: amountNum * priceNum
+                });
+            }
+
+            // 💰 перерахунок totalPay
+            const totalPay = visitorData.products.reduce((sum, p) => sum + (Number(p.summary) || 0), 0);
+
+            await update(visitorRef, {
+                products: visitorData.products,
+                timestamp: new Date().toLocaleString("uk-UA"),
+                pay: totalPay
+            });
+
+            console.log(`✅ "${name}" додано/оновлено — ${amountNum} шт`);
+        }
+
+        window.addUserReplace = addUserReplace;
+
+        // ===================== Безпечне закриття вкладки =====================
+        window.addEventListener('beforeunload', (event) => {
+            // Виконуються лише синхронні дії
+            // Не можна викликати async / fetch / update тут!
+            console.log("Вкладка закривається - не блокуємо сторінку");
+            // Якщо потрібно, можна встановити короткі значення у localStorage
+            // localStorage.setItem("lastVisit", new Date().toISOString());
+        });
+
+        // ========================= Відображення totalPay і totalAmount (тільки для цього IP) =========================
+        const totalPayElement = document.getElementById("totalPay");
+        const totalAmountElement = document.getElementById("totalAmount");
+
+        (async () => {
+            const ip = await getUserIP();
+            if (ip === "unknown") return;
+
+            const visitorKey = ip.replace(/\./g, "_");
+            const userRef = ref(db, "visitors/" + visitorKey);
+
+            onValue(userRef, (snapshot) => {
+                let totalPay = 0;
+                let totalAmount = 0;
+
+                if (snapshot.exists()) {
+                    const user = snapshot.val();
+                    totalPay = Number(user.pay || 0);
+
+                    if (Array.isArray(user.products)) {
+                        user.products.forEach(product => {
+                            totalAmount += Number(product.amount || 0);
+                        });
+                    }
+                }
+
+                if (totalPayElement)
+                    totalPayElement.textContent = `€${totalPay.toFixed(2)}`;
+
+                if (totalAmountElement)
+                    totalAmountElement.textContent = totalAmount.toString();
+            });
+        })();
+
+
+        ////////////////////////////////////
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            const totalPayElement = document.getElementById('totalPay1'); // ✅ правильний елемент
+        
+            checkoutBtn.addEventListener('click', (e) => {
+                const totalPay = parseFloat(totalPayElement.textContent.replace(/[€\s]/g, "")) || 0;
+        
+                if (totalPay === 0) {
+                    e.preventDefault();
+        
+                    const existingAlert = document.getElementById('checkoutAlert');
+                    if (existingAlert) existingAlert.remove();
+        
+                    const alertDiv = document.createElement('div');
+                    alertDiv.id = 'checkoutAlert';
+                    alertDiv.className = 'alert alert-danger mt-3';
+                    alertDiv.textContent = '⚠ Bitte fügen Sie zuerst Artikel hinzu!';
+                    checkoutBtn.insertAdjacentElement('afterend', alertDiv);
+                }
+            });
+        });
+        
+
+
+   
+        
+    </script>
+
+
+
+</body>
+
+</html>
